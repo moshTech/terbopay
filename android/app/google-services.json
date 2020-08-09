@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "11517225841",
+    "firebase_url": "https://terbopay.firebaseio.com",
+    "project_id": "terbopay",
+    "storage_bucket": "terbopay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11517225841:android:c84944ba622374aacce4d0",
+        "android_client_info": {
+          "package_name": "com.mosh.terbopay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11517225841-dltsn8o63hkt9qdu8a09a4uj3umgjmp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mosh.terbopay",
+            "certificate_hash": "5c50ae294c2adb7c4e0f45499e3b1061cef685d2"
+          }
+        },
+        {
+          "client_id": "11517225841-3ov80v3fv4gvpr1igvf7ease43786q4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXGauc_7LA9CspCYA0ywHCimXcqF_o_10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11517225841-3ov80v3fv4gvpr1igvf7ease43786q4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
