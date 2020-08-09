@@ -1,15 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:terbopay/services/auth_service.dart';
 import 'package:terbopay/zip_code.dart';
 
 import 'login.dart';
 
 class PhoneVerify extends StatelessWidget {
-  String smsCode;
-  // String verificationId;
-
   @override
   Widget build(BuildContext context) {
+    String smsCode;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(
@@ -34,6 +33,7 @@ class PhoneVerify extends StatelessWidget {
                     height: 20,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       hintText: 'Enter code to verify',
                       helperStyle: TextStyle(
@@ -65,7 +65,8 @@ class PhoneVerify extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => ZipCode()));
                     } else {
-                      signInWithOTP(smsCode, context);
+                      AuthService()
+                          .signInWithOTP(smsCode, context, verificationId);
                     }
                   });
                 },

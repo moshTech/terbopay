@@ -30,6 +30,7 @@ class FirstName extends StatelessWidget {
                     height: 20,
                   ),
                   TextFormField(
+                    textCapitalization: TextCapitalization.sentences,
                     decoration: InputDecoration(
                       hintText: 'Full Name',
                       helperStyle: TextStyle(
@@ -54,7 +55,7 @@ class FirstName extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CashTag()));
+                      MaterialPageRoute(builder: (context) => TerboTag()));
                 },
                 color: Colors.blue,
                 child: Text(

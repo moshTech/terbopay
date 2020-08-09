@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:terbopay/splashscreen.dart';
 
 import '../home.dart';
+import '../zip_code.dart';
 // import '../login.dart';
 
 class AuthService {
@@ -29,9 +30,13 @@ class AuthService {
     FirebaseAuth.instance.signOut();
   }
 
-  signInWithOTP(smsCode, verId) {
+  signInWithOTP(smsCode, context, verificationId) {
     AuthCredential authCredential = PhoneAuthProvider.getCredential(
-        verificationId: verId, smsCode: smsCode);
-    signIn(authCredential);
+        verificationId: verificationId, smsCode: smsCode);
+    FirebaseAuth.instance
+        .signInWithCredential(authCredential)
+        .then((value) => Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => ZipCode())))
+        .catchError((e) => print(e));
   }
 }

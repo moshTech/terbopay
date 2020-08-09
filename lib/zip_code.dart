@@ -30,6 +30,7 @@ class ZipCode extends StatelessWidget {
                     height: 20,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       hintText: 'Zip code',
                       helperStyle: TextStyle(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:terbopay/welcome.dart';
 
-class CashTag extends StatelessWidget {
-  const CashTag({Key key}) : super(key: key);
+class TerboTag extends StatelessWidget {
+  const TerboTag({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,7 @@ class CashTag extends StatelessWidget {
                     height: 20,
                   ),
                   TextFormField(
+                    textCapitalization: TextCapitalization.sentences,
                     decoration: InputDecoration(
                       hintText: 'Terbotag',
                       helperStyle: TextStyle(

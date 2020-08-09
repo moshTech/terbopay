@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:terbopay/email_verify.dart';
 // import 'package:terbopay/services/auth_service.dart';
 import 'package:terbopay/phone_verify.dart';
+import 'package:terbopay/services/auth_service.dart';
 import 'package:terbopay/zip_code.dart';
 
 class Login extends StatefulWidget {
@@ -13,16 +14,6 @@ class Login extends StatefulWidget {
 }
 
 String verificationId;
-
-signInWithOTP(smsCode, context) {
-  AuthCredential authCredential = PhoneAuthProvider.getCredential(
-      verificationId: verificationId, smsCode: smsCode);
-  FirebaseAuth.instance
-      .signInWithCredential(authCredential)
-      .then((value) => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ZipCode())))
-      .catchError((e) => print(e));
-}
 
 class _LoginState extends State<Login> {
   final TextEditingController emailController = TextEditingController();
@@ -49,7 +40,9 @@ class _LoginState extends State<Login> {
 
     final PhoneVerificationCompleted phoneVerificationCompleted =
         (AuthCredential authCredential) {
-      // AuthService().signIn(authCredential);
+      AuthService().signIn(authCredential);
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => ZipCode()));
       print("Success");
     };
 

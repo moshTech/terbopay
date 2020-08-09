@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:terbopay/login.dart';
 import 'package:terbopay/services/auth_service.dart';
 
 class Profile extends StatelessWidget {
@@ -154,6 +155,8 @@ class Profile extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()));
                     AuthService().signOut();
                   },
                   child: Text(
